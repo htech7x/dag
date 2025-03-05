@@ -13,11 +13,11 @@ dag = DAG(
 
 # Define the KubernetesPodOperator Task
 kpo_task = KubernetesPodOperator(
-#    namespace='astronomer-red',  # Change this to your Airflow namespace
+    namespace='test',  # Change this to your Airflow namespace
 #    service_account_name="alex",
     image='python:3.9-slim',  # Container image to use
     cmds=["python", "-c"],
-    arguments=["import time; time.sleep(7); print('Hello from KPO!')"],  # Simple Python script
+    arguments=["import time; time.sleep(20); print('Hello from KPO!')"],  # Simple Python script
     name="kpo-task",
     task_id="run_python_script",
     get_logs=True,  # Capture logs from the pod

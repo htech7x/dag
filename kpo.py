@@ -13,7 +13,7 @@ dag = DAG(
 
 # Define the KubernetesPodOperator Task
 kpo_task = KubernetesPodOperator(
-#    namespace='test',  # Change this to your Airflow namespace
+    namespace='test',  # Change this to your Airflow namespace
     kubernetes_conn_id="k8s_conn",
 #    service_account_name="alex",
     image='python:3.9-slim',  # Container image to use

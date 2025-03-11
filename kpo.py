@@ -24,5 +24,20 @@ kpo_task = KubernetesPodOperator(
     get_logs=True,  # Capture logs from the pod
     dag=dag,
 )
-
+task_2 = KubernetesPodOperator(
+    image="python:3.9",
+    cmds=["python", "-c"],
+    arguments=["import time; time.sleep(10); print('Hello from KPO task 2')"], 
+    name="example-task-2",
+    task_id="run-in-k8s-2",
+    dag=dag,
+)
+task_3 = KubernetesPodOperator(
+    image="python:3.9",
+    cmds=["python", "-c"],
+    arguments=["import time; time.sleep(10); print('Hello from KPO task 3')"], 
+    name="example-task-3",
+    task_id="run-in-k8s-3",
+    dag=dag,
+)
 

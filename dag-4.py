@@ -1,12 +1,12 @@
 from airflow.decorators import dag, task
 
 @dag(
-    dag_id='dag-4',
+    dag_id='dag_4',
     description='Run it and get your gift...',
     schedule=None,
     tags=['one', 'two'],
 )
-def dag-4():
+def dag_4():
     
     @task()
     def look_at_my_logs():
@@ -33,4 +33,4 @@ def dag-4():
 
     look_at_my_logs()
 
-dag-4()
+dag_4()
